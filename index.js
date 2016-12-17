@@ -42,7 +42,7 @@ app.get('/recent/', function(req, res) {
 	res.send(recentSearchArr);
 });
 
-app.listen(3000, function(err, data) {
+app.listen(process.env.PORT || 5000, function(err, data) {
 	if (err) console.log(err)
-	else console.log("Listening on port 3000");
+	else console.log("Listening on port 5000");
 });
