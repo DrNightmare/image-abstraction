@@ -1,7 +1,12 @@
 var Bing = require('node-bing-api')({accKey: "5a47106fa32643898f98f5737f8a7b25"})
 var express = require('express');
 var fs = require('fs');
+var path = require('path');
 var app = express();
+
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
 
 app.get('/search/', function(req, res) {
 	var searchQuery = req.query.q;
